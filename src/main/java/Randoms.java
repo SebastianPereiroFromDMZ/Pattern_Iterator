@@ -13,24 +13,7 @@ public class Randoms implements Iterable<Integer> {
 
     @Override
     public Iterator<Integer> iterator() {
-
-        return new Iterator<>() {
-
-            @Override
-            public boolean hasNext() {
-                return true;
-            }
-
-            @Override
-            public Integer next() {
-
-                return rnd(min, max);
-            }
-        };
-    }
-
-    public static int rnd(int min, int max) {
-        max -= min;
-        return (int) (Math.random() * ++max) + min;
+        return new RandomsIterator(this);
     }
 }
+

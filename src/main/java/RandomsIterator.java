@@ -15,10 +15,13 @@ public class RandomsIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
-        int i = randoms.random.nextInt(randoms.max + 1);
-        while (i < randoms.min) {
-            i = randoms.random.nextInt(randoms.max + 1);
-        }
-        return i;
+        return rnd(randoms.min, randoms.max);
+    }
+
+
+
+    public static int rnd(int min, int max) {
+        max -= min;
+        return (int) (Math.random() * ++max) + min;
     }
 }
