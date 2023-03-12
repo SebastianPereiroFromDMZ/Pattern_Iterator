@@ -23,12 +23,14 @@ public class Randoms implements Iterable<Integer> {
 
             @Override
             public Integer next() {
-                int i = random.nextInt(max + 1);
-                while (i < min) {
-                    i = random.nextInt(max + 1);
-                }
-                return i;
+
+                return rnd(min, max);
             }
         };
+    }
+
+    public static int rnd(int min, int max) {
+        max -= min;
+        return (int) (Math.random() * ++max) + min;
     }
 }
