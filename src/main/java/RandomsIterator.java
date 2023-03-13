@@ -13,7 +13,6 @@ public class RandomsIterator implements Iterator<Integer> {
         return true;
     }
 
-
     @Override
     public Integer next() {
         return randoms.random.nextInt(randoms.max - randoms.min + 1) + randoms.min;
