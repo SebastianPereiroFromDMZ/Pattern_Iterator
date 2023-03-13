@@ -9,7 +9,7 @@ public class RandomsIterator implements Iterator<Integer> {
     }
 
     @Override
-    public boolean hasNext() {//один из двех основных методов итератора, смотрит что дальше
+    public boolean hasNext() {
         return true;
     }
 
