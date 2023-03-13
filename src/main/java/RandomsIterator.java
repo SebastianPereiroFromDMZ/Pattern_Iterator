@@ -9,19 +9,12 @@ public class RandomsIterator implements Iterator<Integer> {
     }
 
     @Override
-    public boolean hasNext() {
+    public boolean hasNext() {//один из двех основных методов итератора, смотрит что дальше
         return true;
     }
 
     @Override
     public Integer next() {
-        return rnd(randoms.min, randoms.max);
-    }
-
-
-
-    public static int rnd(int min, int max) {
-        max -= min;
-        return (int) (Math.random() * ++max) + min;
+        return randoms.random.nextInt(randoms.max - randoms.min + 1) + randoms.min;
     }
 }
